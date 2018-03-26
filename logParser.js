@@ -55,14 +55,6 @@ bot.on("message", msg => {
 			}
 		});
 	}
-	/*else if(msg.channel.type === "dm") {
-		bot.guilds.find("ownerID", "151044827738275840").owner.send("`" + msg.author.tag + "` " + msg.cleanContent);
-	}
-	else if(msg.mentions.users) {
-		if(msg.mentions.users.first().id === bot.user.id || msg.mentions.members.first().id === bot.user.id) {
-			bot.guilds.find("ownerID", "151044827738275840").owner.send("`" + msg.author.tag + "` " + msg.cleanContent);
-		}
-	}*/
 });
 
 bot.on("message", msg => {
