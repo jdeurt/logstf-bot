@@ -112,8 +112,9 @@ bot.on("message", msg => {
 						msg.channel.send(`The alias ${n} has already been taken.`);
 					}
 				}).catch(() => {
-					sql.run(`CREATE TABLE IF NOT EXISTS ${toSQLReadable(msg.guild.id)} (name TEXT, id INTEGER)`);
-					sql.run(`INSERT INTO ${toSQLReadable(msg.guild.id)} (name, id) VALUES (?, ?)`, [n, i]);
+					sql.run(`CREATE TABLE IF NOT EXISTS ${toSQLReadable(msg.guild.id)} (name TEXT, id INTEGER)`).then(() => {
+						sql.run(`INSERT INTO ${toSQLReadable(msg.guild.id)} (name, id) VALUES (?, ?)`, [n, i]);
+					});
 				});
 			});
 		}
