@@ -34,7 +34,7 @@ function fetchAlias(alias, _msg) {
 	return r;
 }
 
-bot.on("message", msg => {
+/*bot.on("message", msg => {
 	if(msg.author.bot) return;
 	if(msg.author.id = "151044827738275840" && msg.content.startsWith("!!--")) {
 		var shout = msg.content.replace("!!--", "");
@@ -63,7 +63,7 @@ bot.on("message", msg => {
 			bot.guilds.find("ownerID", "151044827738275840").owner.send("`" + msg.author.tag + "` " + msg.cleanContent);
 		}
 	}
-});
+});*/
 
 bot.on("message", msg => {
 	if(msg.author.bot) return;
