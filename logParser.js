@@ -34,7 +34,7 @@ function fetchAlias(alias, _msg) {
 	return r;
 }
 
-/*bot.on("message", msg => {
+bot.on("message", msg => {
 	if(msg.author.bot) return;
 	if(msg.author.id = "151044827738275840" && msg.content.startsWith("!!--")) {
 		var shout = msg.content.replace("!!--", "");
@@ -55,15 +55,15 @@ function fetchAlias(alias, _msg) {
 			}
 		});
 	}
-	else if(msg.channel.type === "dm") {
+	/*else if(msg.channel.type === "dm") {
 		bot.guilds.find("ownerID", "151044827738275840").owner.send("`" + msg.author.tag + "` " + msg.cleanContent);
 	}
 	else if(msg.mentions.users) {
 		if(msg.mentions.users.first().id === bot.user.id || msg.mentions.members.first().id === bot.user.id) {
 			bot.guilds.find("ownerID", "151044827738275840").owner.send("`" + msg.author.tag + "` " + msg.cleanContent);
 		}
-	}
-});*/
+	}*/
+});
 
 bot.on("message", msg => {
 	if(msg.author.bot) return;
