@@ -148,6 +148,16 @@ bot.on("message", msg => {
 						 .setThumbnail("http://logs.tf/assets/img/logo-social.png")
 						 .setColor(victor);
 						cleanArgs.shift();
+						cleanArgs.forEach((stat, statIndex) => {
+							var s = stat.toLowerCase();
+							if(s === "dpm") {
+								cleanArgs[statIndex] = "dapm";
+							}
+							if(s === "kd") {
+								cleanArgs.splice(statIndex, 1);
+								cleanArgs.push(...["kills", "deaths"]);
+							}
+						});
 						cleanArgs.forEach(stat => {
 							if(json.players[playerID][stat.toLowerCase()]) {
 								e.addField(stat.toUpperCase(), json.players[playerID][stat.toLowerCase()], true);
