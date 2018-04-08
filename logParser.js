@@ -243,8 +243,8 @@ bot.on("message", msg => {
 bot.on("message", msg => {
 	if(msg.content.match(/^connect(.*?);(\s|)password/g)) {
 		var info = msg.content.trim().split(";");
-		var ip = info[0].trim().replace(/connect\s/);
-		var pass = info[1].trim().replace(/password\s/);
+		var ip = info[0].trim().replace(/connect\s/, "");
+		var pass = info[1].trim().replace(/password\s/, "");
 		msg.channel.send(`steam://connect/${ip}/${pass}`);
 	}
 });
