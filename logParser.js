@@ -1,4 +1,4 @@
-vvvvvvvconst discord = require("discord.js");
+const discord = require("discord.js");
 const fetch = require("request");
 const config = require("./config");
 const sql = require("sqlite");
