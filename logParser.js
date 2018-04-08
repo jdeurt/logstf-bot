@@ -1,5 +1,4 @@
 const discord = require("discord.js");
-const steam = require("steam-community")();
 const fetch = require("request");
 const config = require("./config");
 const sql = require("sqlite");
@@ -238,6 +237,15 @@ bot.on("message", msg => {
 			if(msg.content.split(" ").length === 1) msg.delete();
 			msg.channel.send({embed: e});
 		});
+	}
+});
+
+bot.on("message", msg => {
+	if(msg.content.match(/^connect(.*?);(\s|)password/g)) {
+		var info = msg.content.trim().split.(";");
+		var ip = info[0].trim().replace(/connect\s/);
+		var pass = info[1].trim().replace(/password\s/);
+		msg.channel.send(`steam://connect/${ip}/${pass}`);
 	}
 });
 
